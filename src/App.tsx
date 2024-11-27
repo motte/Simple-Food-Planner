@@ -150,7 +150,7 @@ function App() {
       )}
       
       {interfaceMode?.type !== 'traditional' && (
-        <div onClick={() => setInterfaceMode({type: 'traditional'})} style={{margin: '16px 8px 16px 8px'}} style={{cursor: 'pointer', marginTop: '16px'}}>See Full Menu</div>
+        <div onClick={() => setInterfaceMode({type: 'traditional'})} style={{margin: '16px 8px 16px 8px', cursor: 'pointer', marginTop: '16px'}}>See Full Menu</div>
       )}
 
       {interfaceMode?.type === 'traditional' && (
