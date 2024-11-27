@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Vibur&display=swap');
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+body {
+  background-color: #141414;
+  color: white;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: auto;
+  height: 6em;
+  padding-right: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+.neon-text {
+  font-family: "Vibur", cursive;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  text-align: center;
+  line-height: 1;
+  color: #c6e2ff;
+  animation: neon-glow .08s ease-in-out infinite alternate;
+}
+
+@keyframes neon-glow {
+  from {
+    text-shadow: 
+    0 0 6px rgba(202,228,225,0.92),
+    0 0 30px rgba(202,228,225,0.34),
+    0 0 12px rgba(30,132,242,0.52),
+    0 0 21px rgba(30,132,242,0.92),
+    0 0 34px rgba(30,132,242,0.78),
+    0 0 54px rgba(30,132,242,0.92);
+  }
+  to {
+    text-shadow: 0 0 6px rgba(202,228,225,0.98),
+    0 0 30px rgba(202,228,225,0.42),
+    0 0 12px rgba(30,132,242,0.58),
+    0 0 22px rgba(30,132,242,0.84),
+    0 0 38px rgba(13, 34, 57, 0.88),
+    0 0 60px rgba(30,132,242,1);
+  }
+}
+
+.query-loader {
+  --s: 16px;
+  
+  --_d: calc(0.353*var(--s));
+  width: calc(var(--s) + var(--_d));
+  aspect-ratio: 1;
+  display: grid;
+
+  margin: 0 24px 22px -4px;
+  transition: all 2s ease-in-out 0s;
+}
+.query-loader:before,
+.query-loader:after {
+  content: "";
+  grid-area: 1/1;
+  clip-path: polygon(var(--_d) 0,100% 0,100% calc(100% - var(--_d)),calc(100% - var(--_d)) 100%,0 100%,0 var(--_d));
+  background:
+    conic-gradient(from -90deg at calc(100% - var(--_d)) var(--_d),
+     #fff 135deg,#666 0 270deg,#aaa 0);
+  animation: loader 3s infinite;
+}
+.query-loader:after {
+  animation-delay:1.5s;
+}
+@keyframes loader {
+  0%  {transform:translate(0,0)}
+  15% {transform:translate(20px,0)}
+  50% {transform:translate(20px,20px)}
+  65% {transform:translate(0,20px)}
+  100%{transform:translate(0,0)}
+}
+
+
+ul.message-list {
+  list-style-type: none;
+  max-height: 40rem;
+  overflow-y: auto;
+  transition: all 2s ease-in-out 0s;
+  background-color: #242424;
+  border-radius: 1rem;
+  min-height: 20rem;
+  padding: 1rem;
+}
+
+li.system, li.assistant, li.agent {
+  background-color: rgba(30, 242, 111, 0.6);
+  margin: 0.5rem 1.5rem 1rem 0;
+  border-radius: 0 1.5rem 1.5rem 1.5rem;
+  width: fit-content;
+  padding: 0.01rem 1.5rem;
+  text-align: left;
+  transition: all 2s ease-in-out 0s;
+}
+
+li.user {
+  background-color: rgba(30,132,242,0.7);
+  border-radius: 1.5rem 1.5rem 0 1.5rem;
+  width: fit-content;
+  padding: 0.01rem 1.5rem;
+  margin: 0.5rem 0 1rem auto;
+  text-align: right;
+  transition: all 2s ease-in-out 0s;
+}
+
+.form-container {
+  display: flex;
+  align-items: center;
+  padding: .3rem 1rem .3rem 1.6rem;
+  border-radius: 1rem;
+  background-color: #343434;
+}
+
+.form-container input {
+  width: 100%;
+  height: 2rem;
+  font-size: 1rem;
+  padding: .5rem;
+  border-radius: 1.5rem;
+  background-color: #343434;
+  outline: none;
+  border: none;
+  color: white;
+}
